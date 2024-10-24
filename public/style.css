@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    color: #fff; 
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #f0f0f0; 
+    text-align: center;
+}
+
+
+.cartas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+    grid-gap: 15px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Estilo das cartas */
+.cartao {
+    position: relative;
+    width: 120px;  
+    height: 180px; 
+    background-color: #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    overflow: hidden;
+    padding: 10px;
+    word-wrap: break-word;
+    font-size: 1em;
+    background-image: url('img/logo1.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Efeito visual moderno ao passar o mouse */
+.cartao:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.cartao p {
+    display: none;
+    font-size: 0.9rem;
+    color: black;
+    text-align: center;
+}
+
+/* Quando a carta está virada */
+.cartao.virado {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); 
+    background-image: none; 
+}
+
+.cartao.virado p {
+    display: block;
+    word-wrap: break-word;
+    font-size: 0.85rem;
+    color: #333;
+    padding: 5px;
+}
+
+/* Ajusta o tamanho do texto nas cartas para telas menores */
+@media (max-width: 600px) {
+    .cartao {
+        font-size: 0.9em;
+    }
+
+    .cartao p {
+        font-size: 0.8em;
+    }
+}
